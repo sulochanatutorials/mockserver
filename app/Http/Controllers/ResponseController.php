@@ -25,8 +25,7 @@ class ResponseController extends Controller
                     "status" => "Success",
                     "message" => "Email Verification Successful"
                 ];
-
-                break;
+                 break;
 
             case 'verify/mobile/otp':
                 $response = [
@@ -72,7 +71,85 @@ class ResponseController extends Controller
                 ];
 
             break;
-            
+            case 'account/projects':
+               $response = [
+                    "status" => "Success",
+                    "message" => "Projects Data Fetched",
+                    "data"=>[
+                        'projects'=>[
+                            ["id"=>"1",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-01.svg",
+                            "name"=>"ganesh-kanade-1003",
+                            "description"=>"This is a dummy text for cloud compute introduction. This is a dummy text for cloud compute introduction. This is a dummy text."],
+                            ["id"=>"2",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-02.svg",
+                            "name"=>"another-project",
+                            "description"=>"This is a dummy text for cloud compute introduction. This is a dummy text for cloud compute introduction. This is a dummy text."],
+                        ]
+                    ]
+                ];
+
+            break;
+            case 'providers':
+               $response = [
+                    "status" => "Success",
+                    "message" => "Providers Data Fetched",
+                    "data"=>[
+                        'providers'=>[
+                            ["id"=>"1",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-01.svg",
+                            "name"=>"Cloud Compute",
+                            "description"=>"This is a dummy text for cloud compute introduction. This is a dummy text for cloud compute introduction. This is a dummy text."],
+                            ["id"=>"2",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-02.svg",
+                            "name"=>"Bare Metal",
+                            "description"=>"This is a dummy text for cloud compute introduction. This is a dummy text for cloud compute introduction. This is a dummy text."],
+                            ["id"=>"3",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-03.svg",
+                            "name"=>"Dinasor",
+                            "description"=>"This is a dummy text for cloud compute introduction. This is a dummy text for cloud compute introduction. This is a dummy text."],
+                        ]
+                    ]
+                ];
+
+            break;
+
+            case 'regions':
+               $response = [
+                    "status" => "Success",
+                    "message" => "Regions Data Fetched",
+                    "data"=>[
+                        'regions'=>[
+                            ["id"=>"1",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-01.svg",
+                            "name"=>"India",
+                            "description"=>"This test description",
+                            "continent"=>"Asia"],
+                            ["id"=>"2",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-02.svg",
+                            "name"=>"China",
+                            "description"=>"This test description",
+                            "continent"=>"Asia"],
+                            ["id"=>"3",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-03.svg",
+                            "name"=>"Japan",
+                            "description"=>"This test description",
+                            "continent"=>"Asia"],
+                            ["id"=>"4",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-03.svg",
+                            "name"=>"New York",
+                            "description"=>"This test description",
+                            "continent"=>"USA"],
+                            ["id"=>"5",
+                            "icon"=>"https://dev01.stackconsole.io/images/clouds/cloud-03.svg",
+                            "name"=>"XYZ",
+                            "description"=>"This test description",
+                            "continent"=>"USA"],
+                        ]
+                    ]
+                ];
+
+            break;
         }
         return response()->json($response);
     }
